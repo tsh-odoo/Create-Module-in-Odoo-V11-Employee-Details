@@ -1,0 +1,33 @@
+
+<odoo>
+
+	<record id="wizard_form_view" model="ir.ui.view">
+            <field name="name">wizard.form</field>
+            <field name="model">employee.projects.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Add Languages">
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="languages"/>
+                    </group>
+
+                    <!-- if you want to change default save and cancel button -->
+
+                    <!-- <footer>
+		                <button name="update_info" string="Update Info" type="object" class="oe_highlight"/>
+		                <button string="Cancel" class="btn-default" special="cancel"/>
+		            </footer> -->
+		            
+                </form>
+            </field>
+    </record>
+
+	<act_window id="launch_the_wizard"
+	            name="Update Languages"
+	            src_model="employee.projects"
+	            res_model="employee.projects.wizard"
+	            view_mode="form"
+	            target="new"
+	            key2="client_action_multi"/>
+
+</odoo>
